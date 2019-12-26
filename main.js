@@ -1,10 +1,13 @@
-var WebRPG = function()
+var WebRPG = function(c_div)
 {
+  this.canvas_div = c_div
   /*
    * init() - initialization function
    */
   this.init = function()
   {
-    alert("Initialized game engine");  
+    this.canv = new Canvas(this.canvas_div, 10, 10);
+    this.canv.init();
+
   }
 }
