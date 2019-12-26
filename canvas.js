@@ -16,7 +16,7 @@ var Canvas = function(div, w, h)
     for( j=0; j<this.h; j++ ) {
       this._canvas[j] = []
       for( i=0; i<this.w; i++ ) {
-        this._canvas[j][i] = "O";
+        this._canvas[j][i] = "0";
       }
     }
 
@@ -29,15 +29,24 @@ var Canvas = function(div, w, h)
    */
   this.draw = function()
   {
-    str = "<p>";
+    str = "<pre>";
     for( j=0; j<this.h; j++ ) {
       for( i=0; i<this.w; i++ ) {
         str += this._canvas[j][i];
       }
-      str += "</br>"
+      str += "\n"
     }
-    str += "</p>";
+    str += "</pre>";
     this._canvas_div.innerHTML = str;
+  }
+
+
+  /*
+   * pset() - Draw a point in specific coordinates
+   */
+  this.pset = function(x,y,c)
+  {
+    this._canvas[y][x] = c;
   }
 
 }

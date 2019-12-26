@@ -9,5 +9,8 @@ var WebRPG = function(c_div)
     this.canv = new Canvas(this.canvas_div, 10, 10);
     this.canv.init();
 
+    this.canv.pset(3,3,"A");
+    this.canv.pset(4,8,"X");
+    this.canv.draw();
   }
 }
